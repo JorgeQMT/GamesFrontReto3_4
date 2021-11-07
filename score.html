@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script type="text/javascript" src="misFuncionesScore.js"></script>
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"crossorigin="anonymous">
+    
+        <title>CALIFICACIÒNES</title>
+    </head>
+
+    <body>
+        <canvas></canvas>
+        <div style="color: #fff; font-size: 18px;">
+            Logged in as: <span id="user"></span>
+        </div>
+        <div id="logo" style="margin-left: 500px; margin-top: 30px; color: #fff;">
+            <h1>RENTAL GAMES</h1>
+        </div>
+        <header class="header">
+            <div class="container">
+                <div class="btn-menu">
+                    <label for="btn-menu" class="glyphicon glyphicon-eye-open"></label>
+                </div>
+                 <nav class="menu">
+                     <a href="#">Inicio</a>
+                     <a href="#">Nosotros</a>
+                     <a href="#">Blog</a>
+                     <a href="#">Contacto</a>
+                 </nav>
+            </div> 
+        </header>
+        <div class="capa"></div>
+        <input type="checkbox" id="btn-menu"><!-- comment -->
+        <div class="container-menu">
+            <div class="cont-menu">
+                <nav>
+                    <a href="/HomePage.html">Inicio</a>
+                    <a href="/Admin.html">Administradores</a>
+                    <a href="/Category.html">Categorias</a>
+                    <a href="/Game.html">Juegos</a>
+                    <a href="/Client.html">Clientes</a>
+                    <a href="/Message.html">Mensajes</a>
+                    <a href="/Reservation.html">Reservaciónes</a>
+                    <a href="/Score.html">Calificaciónes</a>
+                    <a href="/Report.html">Reporte</a>
+                </nav>
+                <label for="btn-menu" class="glyphicon glyphicon-eye-close"></label>
+            </div>
+        </div>   
+        <div class="content">
+            <div class="contact-wrapper" style="margin-top: 100px">
+                <div class="contact-form">
+                    <h3>Calificación</h3>
+                    <form  id="formR" name="formR" action="javascript:Reservation('formR')">
+                        <p>
+                            <label for="resultadoR">Id Reserva:</label>
+                            <select name="resultadoR" id="resultadoR" required>
+                                <option>Seleccionar</option>
+                            </select>
+                        </p>
+                        <p>
+                            <label for="resultadoE">Estrellas:</label> 
+                            <select name="resultadoE" id="resultadoE" required>
+                                <option>Seleccionar</option>
+                                <option value=1>*</option>
+                                <option value=2>**</option>
+                                <option value=3>***</option>
+                                <option value=4>****</option>
+                                <option value=5>*****</option>
+                            </select>
+                        </p>
+                        <p>
+                            <label for="messageText">Comentario:</label>
+                            <textarea name="messageText" id="messageText" rows="2" required maxlength="250"></textarea>
+                        </p>
+                    </form>
+                    <div class="block">
+                        <button type="submit" class="btn btn-info btn-lg btn-responsive" onclick="guardarElementoScore()"><span class="glyphicon glyphicon-saved"></span>Agregar</button>                                         
+                    </div>
+                </div>
+                <div class="contact-info">
+                    <h3>Calificaciónes</h3>
+                    <div id="resultadoScore"></div>  
+                </div>
+            </div>
+        </div>>
+    </body>
+</html>

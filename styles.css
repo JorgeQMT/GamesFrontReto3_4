@@ -1,0 +1,162 @@
+@import "https://fonts.googleapis.com/css?family=Ubuntu:400,700italic";
+@import "https://fonts.googleapis.com/css?family=Cabin:400";
+
+*{
+ box-sizing: border-box;
+}
+body{
+  background: #181818;
+  color: #ffff;
+  font-family: sans-serif;
+ 
+
+}
+.logo{
+   font-size: xx-large !important; 
+   color: #fff;
+}
+
+canvas{
+  font-size: 10px;
+  text-align: center;
+  position: absolute;
+  
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  z-index: -2;
+  background: #000000;
+}
+.content {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+}
+
+.contact-wrapper{
+  margin-top: 100px;
+  display: grid;
+  grid-template-columns: 1fr 2fr !important;
+
+}
+.contact-wrapper{
+  width: 60%;
+  margin: auto;
+  box-shadow: 0 0 20px 0 rgb(255, 255, 255, 3);
+}
+.contact-wrapper >*{
+  padding: 1em;
+}
+.contact-form{
+  background: #222222;
+  font-size: medium;
+  color: #ddd;
+}
+.contact-form form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.contact-form form .block{
+  grid-column: 1/3;
+}
+
+.contact-form form p{
+  margin: 0;
+  padding: 1em;
+}
+
+.contact-form form button,
+.contact-form form input, select, textarea {
+  width: 100%;
+  padding: .7em;
+  border: none;
+  background: none;
+  outline: 0;
+  color :#fff;
+  border-bottom: 1px solid #31d2f2;
+}
+
+.contact-form button{
+  text-transform: uppercase;
+  background: #000;
+  color: #fff;
+  border: 0;
+  padding: 1em;
+  width: 410px;
+  height: 45px;
+}
+
+.contact-form form button:hover,
+.contact-form form button:focus{
+  background: #42C920;
+  color: #fff;
+  transition: background-color 1s ease-out;
+}
+
+.stark-login {
+  margin-left: auto;
+  margin-right: auto;
+  border: 0;
+  text-transform: uppercase;
+  padding: 3.5em;
+}
+
+.stark-login button{
+  animation: input-entry 3s ease-in;
+  background: #222;
+  background: linear-gradient(#333333, #222222);
+  border: 1px solid #444;
+  border-left-color: #000;
+  border-radius: 5px;
+  box-shadow: 0 2px 0 #000;
+  color: #fff;
+  display: block;
+  font-size: 18px;
+  font-weight: 400;
+  height: 40px;
+  line-height: 40px;
+  margin: 20px auto;
+  padding: 0;
+  text-shadow: 0 -1px 0 #000;
+  width: 400px;
+  transition: 1s all;
+}
+
+.contact-info {
+  background: #000;
+}
+
+.contact-info button{
+  background: #474747;
+  width: 100px;
+}
+.contact-info table{
+  color: #fff;
+  background-color: #222222;
+  box-sizing: auto;
+  font-size: 12px;
+  border-collapse: collapse;
+  text-align: left;
+  width: 100%;
+}
+.contact-info th, td {
+  padding: 1px;
+  width: 100px;
+}
+.contact-info thead{
+  display: none;
+  background-color: solid 5px #246355;
+  border-bottom: solid 5px #0f362d;
+  color: #fff;
+}
+.contact-info tbody{
+  display: block;
+}
+.tr:nth-child(even){
+  background-color: #f00;
+}
+.contact-info tr:hover td{
+  background-color: #31d2f2;
+  color: #fff;
+}

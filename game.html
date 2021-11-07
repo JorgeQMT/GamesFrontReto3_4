@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script type="text/javascript" src="misFuncionesGame.js"></script>
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"crossorigin="anonymous">
+    
+        <title>JUEGOS</title>
+    </head>
+
+    <body>
+        <canvas></canvas>
+        <div style="color: #fff; font-size: 18px;">
+            Logged in as: <span id="user"></span>
+        </div>
+        <div id="logo" style="margin-left: 500px; margin-top: 30px; color: #fff;">
+            <h1>RENTAL GAMES</h1>
+        </div>
+        <section>
+            <div class="contact-wrapper" style="margin-top: 100px" >
+                <div class="contact-form">
+                    <h3>Juego</h3>
+                    <form  id="formGames" name="formGame" action="javascript:mensaje('formGames')">
+                        <p>
+                            <label for="nameGame">Categoria:</label>
+                            <select name="resultadoC" id="resultadoC" required>
+                                <option>Seleccionar</option>
+                            </select>
+                        </p>
+                        <p>
+                            <label for="nameGame">Nombre:</label>
+                            <input type="text" name="nameGame" id="nameGame" required maxlength="45">
+                        </p>
+                        <p>
+                            <label for="developer">Desarrollador:</label>
+                            <input type="text" name="developer" id="developer" required maxlength="45">
+                        </p>
+                        <p>
+                            <label for="description">Descripcion:</label>
+                            <input type="text" name="description" id="description" required maxlength="250">
+                        </p>
+                        <p>
+                            <label for="year">Edad Mínima:</label>
+                            <input type="number" name="year" id="year" required min="1" max="60">
+                        </p>
+                    </form>
+                    <div class="block">
+                        <button type="submit" class="btn btn-info btn-lg btn-responsive" onclick="guardarElementoGame()"><span class="glyphicon glyphicon-saved"></span>Agregar</button>
+                    </div>
+                </div>
+                <div class="contact-info">
+                    <h3>Juegos</h3>
+                    <div id="resultadoGame">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+    <script type="text/javascript">$.get("/user", function (data) {$("#user").html(data.name);$(".unauthenticated").hide();$(".authenticated").show();});</script>
+    <script type="text/javascript">$.get("/user", function (data) {$("#user").html(data.name);});</script>
+</html>

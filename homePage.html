@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script type="text/javascript" src="misFunciones.js"></script>
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"crossorigin="anonymous">
+    
+        <title>RENTAL GAMES</title>
+    </head>
+    <body>
+        <canvas></canvas>
+        <div style="color: #fff; font-size: 18px;">
+            Logged in as: <span id="user"></span>
+        </div>
+        <div id="logo" style="margin-left: 500px; margin-top: 30px; color: #fff;">
+            <h1>RENTAL GAMES</h1>
+        </div>  
+        <section class="stark-login" >
+            <div>
+                <div id="fade-box" style="margin-top: 100px;">
+                    <button  onclick="window.location.href='/admin.html'"  type="submit" class="btn btn-info btn-lg btn-responsive" id="search"> <span class="glyphicon glyphicon-search">Administradores</button>
+                    <button  onclick="window.location.href='/category.html'"  type="submit" class="btn btn-info btn-lg btn-responsive" id="search"> <span class="glyphicon glyphicon-search">Categorias</button>
+                    <button  onclick="window.location.href='/game.html'" type="submit" class="btn btn-info btn-lg btn-responsive" id="search"> <span class="glyphicon glyphicon-search">Juegos</button>
+                    <button  onclick="window.location.href='/client.html'"  type="submit" class="btn btn-info btn-lg btn-responsive" id="search"> <span class="glyphicon glyphicon-search">Clientes</button>               
+                    <button  onclick="window.location.href='/message.html'" type="submit" class="btn btn-info btn-lg btn-responsive" id="search"> <span class="glyphicon glyphicon-search">Mensajes</button>
+                    <button  onclick="window.location.href='/reservation.html'" type="submit" class="btn btn-info btn-lg btn-responsive" id="search"> <span class="glyphicon glyphicon-search">Reservaciónes</button>
+                    <button  onclick="window.location.href='/score.html'" type="submit" class="btn btn-info btn-lg btn-responsive" id="search"> <span class="glyphicon glyphicon-search">calificaciónes</button>
+                </div>
+            </div>
+        </section>   
+    </body>
+    <script type="text/javascript">
+    $.get("/user", function (data) {
+        $("#user").html(data.name);
+        $(".unauthenticated").hide();
+        $(".authenticated").show();
+    });
+    </script>
+    <script type="text/javascript">
+    $.get("/user", function (data) {
+        $("#user").html(data.name);
+
+    });
+    </script>
+</html>
+
+
+

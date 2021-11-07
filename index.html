@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <A HREF="homePage.html" TARGET="principal">
+        <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css"/>
+        <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+        <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript">
+            $.get("/user", function (data) {
+                $("#user").html(data.name);
+                $(".unauthenticated").hide();
+                $(".authenticated").show();
+            });
+        </script>
+    </head>
+    <body>
+        <div>Bienvenido</div>
+        <div class="container unauthenticated">
+            Autentiquese con GitHub: <a href="/oauth2/authorization/github">click here</a>
+        </div>
+
+
+        <div class="container authenticated" style="display:none">
+            Logged in as: <span id="user"></span>
+        </div>
+
+    </body>
+</html>

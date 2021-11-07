@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script type="text/javascript" src="misFuncionesCategory.js"></script>
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"crossorigin="anonymous">
+    
+        <title>CATEGORIA</title>
+    </head>
+
+    <body>
+        <canvas> </canvas>
+        <div style="color: #fff; font-size: 18px;">
+            Logged in as: <span id="user"></span>
+        </div>
+        <div id="logo" style="margin-left: 500px; margin-top: 30px; color: #fff;">
+            <h1>RENTAL GAMES</h1>
+        </div>
+        <div>
+            <section>
+                <div class="contact-wrapper" style="margin-top: 100px;" >
+                    <div class="contact-form">
+                        <h3>Categoria</h3>
+                        <form  id="formCategory" name="formCategory" action="javascript:mensaje('formCategory')">
+                            <p>
+                                <label for="nameCategory">Nombre:</label>
+                                <input type="text" name="nameCategory" id="nameCategory" required maxlength="45">
+                            </p>
+                            <p>
+                                <label for="description">Descripcion:</label>
+                                <input type="text" name="description" id="description" required maxlength="250">
+                            </p>
+                        </form>
+                        <div class="block">
+                            <button onclick="guardarElementoCategory()" id="search"> <span class="glyphicon glyphicon-saved"></span>Agregar</button>                 
+                        </div>
+                    </div>
+
+                    <div class="contact-info">
+                        <h3>Categorias</h3>
+                        <table>
+                            <div style="display: table-row-group" id="resultadoCategory">
+                            </div>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </body>
+    <script type="text/javascript">
+    $.get("/user", function (data) {
+        $("#user").html(data.name);
+        $(".unauthenticated").hide();
+        $(".authenticated").show();
+    });
+    </script>
+    <script type="text/javascript">
+    $.get("/user", function (data) {
+        $("#user").html(data.name);
+
+    });
+    </script>
+</html>
